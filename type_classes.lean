@@ -71,3 +71,11 @@ def Pos.div : Pos → Pos → Pos
   | p, k => Pos.ofNat (p.toNat / k.toNat)
 
 #eval (Pos.div (Pos.ofNat 10) (Pos.ofNat 5)).toNat
+
+def imperative : Nat := Id.run do
+  let mut acc := 0
+  for i in  [0:10] do
+    acc := i + acc
+  pure acc
+
+#eval imperative

@@ -123,3 +123,9 @@ open Http
 def main : IO Unit := do
   let response ← MethodHandler.handle Request.get
   IO.println response
+
+def top_scores : IO Unit :=
+  let lst := (([980, 7854, 32, 784, 5434534, 45, 9899].mergeSort).reverse).take 3
+  IO.println s!"Top 3 High Scores!\n {lst}"
+
+#eval top_scores
